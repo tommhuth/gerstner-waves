@@ -20,42 +20,7 @@ module.exports = (env, options) => {
             template: path.join(__dirname, "assets/views", "index.html"),
             filename: "index.html",
             rev
-        }),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.join(__dirname, "assets", "splashscreens"),
-                    to: "splashscreens/[name]." + rev + ".[ext]"
-                }
-            ]
-        }),
-        new WebpackPwaManifest({
-            name: "React boilplate",
-            short_name: "React boilplate",
-            background_color: "#FFF",
-            theme_color: "#000",
-            orientation: "portrait",
-            start_url: "/",
-            display: "fullscreen",
-            inject: true,
-            ios: {
-                "apple-mobile-web-app-status-bar-style": "black-translucent"
-            },
-            filename: "./manifest-[contenthash:6].json",
-            icons: [
-                {
-                    src: path.join("assets", "icons/pwa-icon.png"),
-                    destination: "images",
-                    sizes: [192, 512]
-                },
-                {
-                    src: path.join("assets", "icons/pwa-icon.png"),
-                    destination: "images",
-                    ios: true,
-                    sizes: [120, 180]
-                }
-            ]
-        })
+        }),  
     ] 
 
     if (!options.watch) {
@@ -84,6 +49,10 @@ module.exports = (env, options) => {
         },
         module: {
             rules: [
+                {
+                    test: /\.glsl$/,
+                    loader: "webpack-glsl-loader"
+                },
                 { test: /\.json$/, loader: "json" },
                 {
                     test: /\.js$/,

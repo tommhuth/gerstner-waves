@@ -1,3 +1,45 @@
 @import "global.scss";
 @import "variables.scss";
 @import "typography.scss";
+
+html,
+body {
+    overflow: hidden; 
+}  
+
+#root { 
+    height: 100vh !important;
+    width: 100% !important;
+}
+
+canvas { 
+    top: 0; 
+    position: fixed;
+    display: block;
+    height: 100vh !important;
+    image-rendering: crisp-edges;
+    width: 100% !important;
+    right: 0;
+    left: 0;
+}
+
+input[type=text] {
+    width: 3em;
+    border: 1px solid rgba(#000, .2);
+    margin: 0 .25em;
+    background-color: rgba(#FFF, .65);
+    padding: .25em .35em;
+}
+
+p {
+    margin-bottom: .5em;
+    margin-top: 1em;
+    opacity: .5;
+}
+
+fieldset {
+    position: fixed;
+    bottom: 4em;
+    right: 4em;
+    z-index: 100;
+}
