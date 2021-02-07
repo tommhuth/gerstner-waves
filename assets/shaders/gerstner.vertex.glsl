@@ -12,7 +12,7 @@ uniform vec3 diffuse;
 const float PI = 3.14159265;
 uniform vec4[5] uWaves;
 
-// adpated from https://catlikecoding.com/unity/tutorials/flow/waves/
+// taken from https://catlikecoding.com/unity/tutorials/flow/waves/
 vec3 gerstnerWave(vec4 wave, vec3 p, inout vec3 tangent, inout vec3 binormal) {
     float steepness = wave.z;
     float wavelength = wave.w;
